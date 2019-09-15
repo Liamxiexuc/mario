@@ -1,5 +1,7 @@
 
 
+
+
 var Mario = new Object;
 Object.prototype.move=function(direction){
     switch (direction){
@@ -30,7 +32,7 @@ Object.prototype.move=function(direction){
             var down = myMario.style.top;
             down = parseInt(down.substr(0,down.length-2));
             newDown = down+50;
-            if(newDown<=450){
+            if(newDown<=500){
                 myMario.style.top=newDown + "px";
             }else{
                 break;
@@ -49,10 +51,24 @@ Object.prototype.move=function(direction){
             break;
     } 
 
-    //mario grow
+
+    //mario eat mushroom and grow
+    //get mushroom position
+    //use Dom get position from Css files.
+    var ocssRules = document.styleSheets[0].rules;
+      var styleM = ocssRules[3];
+      var mushroomX = styleM.style.left;
+      var mushroomY = styleM.style.top; 
+
+    //getmario position
     var myMario = document.getElementById("mario");
-    if (condition) {
-        
+    var marioX = myMario.style.left;
+   // marioX = parseInt(marioX.substr(0,marioX.length-2));
+    var marioY = myMario.style.top;
+   // marioY = parseInt(marioY.substr(0,marioY.length-2));
+    if ((marioX===mushroomX)&&(marioY===mushroomY)) {
+        myMario.style.height = 100+"px";
+        styleM.style.opacity = 0;     
     }
 }
 
