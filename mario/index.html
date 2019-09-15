@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mario</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+    <div class="main-page">
+        <div id="game-area">
+            <img style="left: 50px; top:50px;" id="mario" src="./pic/mario.png" alt="mario img">
+            <img id="mushroom" src="./pic/mushroom.png" alt="mushroom img">
+        </div>
+        <div>
+            <table class="control-board">
+                <tr>
+                    <td></td>
+                    <td><input class="button" type="button" value="up" onclick="marioMove(0)"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input class="button" type="button" value="left" onclick="marioMove(3)"></td>
+                    <td></td>
+                    <td><input class="button" type="button" value="right" onclick="marioMove(1)"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input class="button" type="button" value="down" onclick="marioMove(2)"></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="./js/mario.js"></script>
+</body>
+</html>
