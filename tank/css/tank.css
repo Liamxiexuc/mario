@@ -1,0 +1,16 @@
+
+.game-map {
+    background-color: red;
+    width: 840px;
+    height: 500px;
+}
+
+.game-tank {
+    position: absolute;
+    background-image: url('../pic/tank.png');
+    background-position-x: 160px; 
+    left: 70px;
+    top: 300px;
+    width: 70px;
+    height: 50px;
+}

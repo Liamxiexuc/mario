@@ -4,8 +4,13 @@
 
 var Mario = new Object;
 Object.prototype.move=function(direction){
+
+
+
+
     switch (direction){
-        case 0:
+        case 0: 
+        case 38:     //up
             var myMario = document.getElementById("mario");
             var top = myMario.style.top;
             top = parseInt(top.substr(0,top.length-2));
@@ -16,7 +21,8 @@ Object.prototype.move=function(direction){
                 break;
             }
             break;
-        case 1:
+        case 1: 
+        case 39:      //right
             var myMario = document.getElementById("mario");
             var right = myMario.style.left;
             right = parseInt(right.substr(0,right.length-2));
@@ -28,6 +34,7 @@ Object.prototype.move=function(direction){
             } 
             break;
         case 2:
+        case 40:          //down
             var myMario = document.getElementById("mario");
             var down = myMario.style.top;
             down = parseInt(down.substr(0,down.length-2));
@@ -39,6 +46,7 @@ Object.prototype.move=function(direction){
             }
             break;
         case 3:
+        case 37:         //left
             var myMario = document.getElementById("mario");
             var left = myMario.style.left;
             left = parseInt(left.substr(0,left.length-2));
@@ -79,27 +87,30 @@ Mario.y=0;
 function marioMove(direct){
     switch(direct){
         case 0:
+        case 38:
             Mario.move(direct);
             break;
         case 1:
+        case 39:
             Mario.move(direct);
             break;
         case 2:
+        case 40:
             Mario.move(direct);
             break;
         case 3:
+        case 37:
             Mario.move(direct);
             break;
     }
 }
 
+function dosomething(event) {
+    if (event.keyCode==37 || event.keyCode==38 ||event.keyCode==39 ||event.keyCode==40) {
+        var direct=event.keyCode;
+        marioMove(direct);
 
-
-
-// below donesn't work
-/* function marioMove(){
-    alert("right");
-} */
-
+    }
+}
 
 
